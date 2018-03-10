@@ -1,4 +1,5 @@
 #! /bin/bash
+# if there is no argument, print out possible arguments
 if [ -z "$1" ]
   then
     echo "Possible arguments:"
@@ -8,9 +9,5 @@ if [ -z "$1" ]
 fi
 
 # replace all instances of the bookmark name with open
-# then write to helper script
-grep "^$1 " bookmark.log | sed "s/$1/open/" > helper.sh
-
-# execute helper script
-chmod +x helper.sh
-bash helper.sh
+# then run in bash
+grep "^$1 " bookmark.log | sed "s/$1/open/" | bash
