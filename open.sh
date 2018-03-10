@@ -7,6 +7,10 @@ if [ -z "$1" ]
     exit 1
 fi
 
-grep $1 bookmark.log | sed "s/$1/open/" > helper.sh
+# replace all instances of the bookmark name with open
+# then write to helper script
+grep "^$1 " bookmark.log | sed "s/$1/open/" > helper.sh
+
+# execute helper script
 chmod +x helper.sh
-./helper.sh
+bash helper.sh
