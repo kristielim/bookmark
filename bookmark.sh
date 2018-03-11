@@ -24,8 +24,15 @@ fi
 # check if Preview is open
 if [ `ps -ax | grep -c Preview` -gt 1 ]
 	then
-	ps -ax | grep Preview | cut -d ' ' -f 1 >> bookmark.log
+	# find process id of Preview
+	pid=`ps -ax | grep Preview | sed '1!d; 1s/ .*//'`
+	# note that the file must be within the Documents folder
+	filename=`lsof -p $pid | grep Documents | sed 's/.* //'`
+	echo "$1" "$filename" >> bookmark.log
 fi
+
+# check if Chrome is open
+
 
 
 
