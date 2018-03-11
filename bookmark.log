@@ -5,3 +5,9 @@ physics /Users/kristielim/Documents/textbooks/UniversityPhysicswithModernPhysics
 physics https://www.chegg.com/homework-help/University-Physics-14th-edition-chapter-8-problem-7E-solution-9780133969290
 preview -a "Sublime Text"
 preview /Users/kristielim/Documents/textbooks/Calculus3ERogawski.pdf
+safari -a "Sublime Text"
+safari /Users/kristielim/Documents/textbooks/Calculus3ERogawski.pdf
+safarihttps://stackoverflow.com/questions/15605288/print-to-stdout-with-applescript
+safari -a "Sublime Text"
+safari /Users/kristielim/Documents/textbooks/Calculus3ERogawski.pdf
+safari https://stackoverflow.com/questions/15605288/print-to-stdout-with-applescript
