@@ -34,10 +34,13 @@ fi
 # check if Safari is open
 if [ `ps -ax | grep -c Safari` -gt 1 ]
 	then
-	#osascript -e 'tell application "Google Chrome" to get URL of tab 1 of window 1'
-	#echo "$1" 
-	osascript CountOpenSafariTabs.scpt $1 >> bookmark.log
+	osascript getTabsSafari.scpt $1 >> bookmark.log
 fi
 
+# check if Chrome is open
+if [ `ps -ax | grep -c Chrome` -gt 1 ]
+	then
+	osascript getTabsChrome.scpt $1 >> bookmark.log
+fi
 
 
