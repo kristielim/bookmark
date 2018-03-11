@@ -9,6 +9,9 @@ if [ -z "$1" ]
     exit 1
 fi
 
+# remove old version of the bookmark if it exists
+grep -v "$1" bookmark.log > bookmark.log
+
 # check if Sublime is open
 if [ `ps -ax | grep -c Sublime` -gt 1 ]
 	then
@@ -32,7 +35,7 @@ if [ `ps -ax | grep -c Preview` -gt 1 ]
 fi
 
 # check if Safari is open
-if [ `ps -ax | grep -c Safari` -gt 1 ]
+if [ `ps -ax | grep -c Safari.app` -gt 1 ]
 	then
 	osascript getTabsSafari.scpt $1 >> bookmark.log
 fi
@@ -43,4 +46,5 @@ if [ `ps -ax | grep -c Chrome` -gt 1 ]
 	osascript getTabsChrome.scpt $1 >> bookmark.log
 fi
 
-
+# remove extra new line characters
+tr -s '\n' '\n' < bookmark.log
