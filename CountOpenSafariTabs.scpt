@@ -13,17 +13,20 @@ tell application "Safari"
 	
 	-- Loop through each window to count the number of open tabs
 	repeat with win in winlist
+	set output to ""
 		try
 			set tabcount to number of tabs in win
-			set totaltabcount to totaltabcount + tabcount
-			-- log "tab count: " & tabcount & " totaltabcount: " & totaltabcount
+			repeat with i from 1 to tabcount
+				tell application "Safari"
+					set output to (output & item 1 of argv & " " & URL of tab i of win & "\n")
+				end tell
+			end repeat
 		on error errmsg
 			-- Often getting error message like this: 
 			-- "Safari got an error: AppleEvent handler failed."
 			-- log "error message: " & errmsg
 		end try
 	end repeat
-	set output to (item 1 of argv & " " & "https://stackoverflow.com/questions/15605288/print-to-stdout-with-applescript")
 	return output
 	
 end tell
