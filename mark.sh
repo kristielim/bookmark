@@ -9,19 +9,21 @@ if [ -z "$1" ]
     exit 1
 fi
 
+logfile="bookmark.log"
+
 # remove old version of the bookmark if it exists
-grep -v "$1" bookmark.log > bookmark.log
+grep -v "^$1 " $logfile > temp.log && mv temp.log $logfile
 
 # check if Sublime is open
 if [ `ps -ax | grep -c Sublime` -gt 1 ]
 	then
-	echo "$1" -a \"Sublime Text\" >> bookmark.log
+	echo "$1" -a \"Sublime Text\" >> $logfile
 fi
 
 # check if Xcode is open
 if [ `ps -ax | grep -c Xcode-beta` -gt 1 ]
 	then
-	echo "$1" -a Xcode-beta >> bookmark.log
+	echo "$1" -a Xcode-beta >> $logfile
 fi
 
 # check if Preview is open
@@ -31,20 +33,20 @@ if [ `ps -ax | grep -c Preview` -gt 1 ]
 	pid=`ps -ax | grep Preview | sed '1!d; 1s/ .*//'`
 	# note that the file must be within the Documents folder
 	filename=`lsof -p $pid | grep Documents | sed 's/.* //'`
-	echo "$1" "$filename" >> bookmark.log
+	echo "$1" "$filename" >> $logfile
 fi
 
 # check if Safari is open
 if [ `ps -ax | grep -c Safari.app` -gt 1 ]
 	then
-	osascript getTabsSafari.scpt $1 >> bookmark.log
+	osascript getTabsSafari.scpt $1 >> $logfile
 fi
 
 # check if Chrome is open
 if [ `ps -ax | grep -c Chrome` -gt 1 ]
 	then
-	osascript getTabsChrome.scpt $1 >> bookmark.log
+	osascript getTabsChrome.scpt $1 >> $logfile
 fi
 
 # remove extra new line characters
-tr -s '\n' '\n' < bookmark.log
+tr -s '\n' '\n' < $logfile > temp.log && mv temp.log $logfile
