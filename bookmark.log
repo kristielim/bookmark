@@ -1,7 +1,20 @@
-hi -a "Sublime Text"
-hi -a Xcode-beta
-hi http://web.cs.ucla.edu/classes/winter18/cs32/
-hi https://www.gnu.org/software/grep/manual/grep.html#Command_002dline-Options
-sup -a "Sublime Text"
-sup http://web.cs.ucla.edu/classes/winter18/cs32/
-sup https://www.gnu.org/software/grep/manual/grep.html#Command_002dline-Options
+cs -a Xcode-beta
+cs http://web.cs.ucla.edu/classes/winter18/cs32/
+cs https://drive.google.com/drive/folders/1nW206XG9sd_GByUkAdv7eN5ZuH9Bm1tA
+cs https://docs.google.com/document/d/1zRCnqnTO8JvYBygCLqE2JAwQBrgl0OuZUY3NZMefr_I/edit
+music-vis -a "Sublime Text"
+music-vis http://localhost:8080/
+music-vis https://github.com/wongbryan/music-vis/tree/all
+music-vis https://www.facebook.com/messages/t/1814170145323553
+react https://www.youtube.com/watch?v=nMqCFWgoO7g&index=27&list=RDQJsy_6vO5n8
+react https://drive.google.com/drive/folders/1PtLswGzZYtC36kGFBmvTT2rqeOTTaLt_
+react https://docs.google.com/document/d/1NGzIt4yeghWPUh-qUvQDNc-QmDbg2K3lXlaIRQCJfpU/edit
+math /Users/kristielim/Documents/textbooks/Calculus3ERogawski.pdf
+math http://www.chegg.com/homework-help/Calculus-3rd-edition-chapter-15.3-problem-74E-solution-9781464125263
+math https://ccle.ucla.edu/pluginfile.php/2171341/mod_resource/content/0/abstract%20practice%20qs.pdf
+math https://www.youtube.com/watch?v=qZ9_RIGrPxI
+math http://tutorial.math.lamar.edu/Classes/CalcIII/DirectionalDeriv.aspx#Gradient_Defn
+physics /Users/kristielim/Documents/textbooks/UniversityPhysicswithModernPhysics14thEdition.pdf
+physics https://www.youtube.com/watch?v=nTY_2MjQ2CI
+physics https://www.chegg.com/homework-help/University-Physics-14th-edition-chapter-10-problem-43E-solution-9780133969290
+physics https://ccle.ucla.edu/pluginfile.php/2139621/mod_resource/content/1/hw-14ed.pdf

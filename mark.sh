@@ -30,9 +30,9 @@ fi
 if [ `ps -ax | grep -c Preview` -gt 1 ]
 	then
 	# find process id of Preview
-	pid=`ps -ax | grep Preview | sed '1!d; 1s/ .*//'`
-	# note that the file must be within the Documents folder
-	filename=`lsof -p $pid | grep Documents | sed 's/.* //'`
+	pid=`ps -ax | grep Preview | sed '1!d; 1s/ .*//'` # sed deletes everything but the first line then picks the first word
+	# note that the file must be a pdf
+	filename=`lsof -p $pid | grep pdf | sed 's/.* //; s/\.pdf.*/.pdf/'` # sed outputs the last word and only what comes before .pdf
 	echo "$1" "$filename" >> $logfile
 fi
 
